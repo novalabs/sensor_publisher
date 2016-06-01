@@ -1,0 +1,6 @@
+{
+  "name": "sensor_publisher",
+  "namespace": "@",
+  "description": "A publisher for CoreSensor sensors",
+  "sources": []
+}
