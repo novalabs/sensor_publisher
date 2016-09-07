@@ -1,5 +1,5 @@
 {
   "name": "sensor_publisher",
-  "description": "A publisher for CoreSensor sensors",
+  "description": "A publisher for core::utils::BasicSensor sensors",
   "provider": "core"
 }

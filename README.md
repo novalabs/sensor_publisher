@@ -1,2 +1,2 @@
 # sensor_publisher
-A CoreSensor publisher node
+A core::utils::BasicSensor publisher node

@@ -8,7 +8,7 @@
 
 #include <core/mw/Publisher.hpp>
 #include <core/mw/CoreNode.hpp>
-#include <core/mw/CoreSensor.hpp>
+#include <core/utils/BasicSensor.hpp>
 
 #include <core/sensor_publisher/Configuration.hpp>
 
@@ -40,9 +40,9 @@ public:
 
 public:
    Publisher(
-      const char*                     name,
-      core::mw::CoreSensor<DataType>& sensor,
-      core::os::Thread::Priority      priority = core::os::Thread::PriorityEnum::NORMAL
+      const char*                         name,
+      core::utils::BasicSensor<DataType>& sensor,
+      core::os::Thread::Priority          priority = core::os::Thread::PriorityEnum::NORMAL
    ) :
       CoreNode::CoreNode(name, priority),
       CoreConfigurable<core::sensor_publisher::Configuration>::CoreConfigurable(name),
@@ -58,8 +58,8 @@ public:
    }
 
 private:
-   core::mw::Publisher<MessageType> _publisher;
-   core::mw::CoreSensor<DataType>&  _sensor;
+   core::mw::Publisher<MessageType>    _publisher;
+   core::utils::BasicSensor<DataType>& _sensor;
 
 private:
    bool
