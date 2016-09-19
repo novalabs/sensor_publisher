@@ -63,6 +63,13 @@ private:
 
 private:
    bool
+   onConfigure()
+   {
+      return isConfigured();
+   }
+
+
+   bool
    onPrepareMW()
    {
       this->advertise(_publisher, configuration().topic);
