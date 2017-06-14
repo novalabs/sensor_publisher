@@ -116,5 +116,17 @@ private:
         return _sensor.stop();
     }
 };
+
+template <class _SENSOR>
+class Publisher_:
+    public Publisher<typename _SENSOR::Converter::FROM, typename _SENSOR::Converter::TO, typename _SENSOR::Converter>
+{
+public:
+    Publisher_(
+        const char*                                                  name,
+        core::utils::BasicSensor<typename _SENSOR::Converter::FROM>& sensor,
+        core::os::Thread::Priority                                   priority = core::os::Thread::PriorityEnum::NORMAL
+    ) : Publisher<typename _SENSOR::Converter::FROM, typename _SENSOR::Converter::TO, typename _SENSOR::Converter>(name, sensor, priority) {}
+};
 }
 }
